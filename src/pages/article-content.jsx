@@ -1,0 +1,46 @@
+const articles=[
+    {
+        name:"Single-page-Apps" ,
+        title:"Single-page Apps (SPAs)",
+        image:"./images/single.jpg",
+        content:[
+           ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim impedit quos suscipit pariatur expedita. Sint enim nulla mollitia soluta sequi praesentium, quibusdam unde laudantium, obcaecati commodi, facilis impedit error debitis.',
+           "Web developers these days refer to the products they build as web apps, rather than websites. While there is no strict difference between the two terms, web apps tend to be highly interactive and dynamic, allowing the user to perform actions and receive a response for their action."
+           ,'Traditionally, the browser receives HTML from the server and renders it. When the user navigates to another URL, a full-page refresh is required and the server sends fresh new HTML for the new page. This is called server-side rendering.',
+           'However in modern SPAs, client-side rendering is used instead. The browser loads the initial page from the server, along with the scripts (frameworks, libraries, app code) and stylesheets required for the whole app. When the user navigates to other pages, a page refresh is not triggered. The URL of the page is updated via the HTML5 History API. New data required for the new page, usually in JSON format, is retrieved by the browser via AJAX requests to the server. The SPA then dynamically updates the page with the data via JavaScript, which it has already downloaded in the initial page load. This model is similar to how native mobile apps work.'
+           ,'While traditional server-side rendered apps are still a viable option, a clear client-server separation scales better for larger engineering teams, as the client and server code can be developed and released independently. This is especially so at Grab when we have multiple client apps hitting the same API server.'
+           ,'As web developers are now building apps rather than pages, organization of client-side JavaScript has become increasingly important. In server-side rendered pages, it is common to use snippets of jQuery to add user interactivity to each page. However, when building large apps, just jQuery is insufficient. After all, jQuery is primarily a library for DOM manipulation and it’s not a framework; it does not define a clear structure and organization for your app.'
+        ],
+    },
+
+
+
+    {
+        name: 'JavaScript',
+        title:'New-age JavaScript',
+        image:"./images/js.png",
+        content: ['Before you dive into the various aspects of building a JavaScript web app, it is important to get familiar with the language of the web — JavaScript, or ECMAScript. JavaScript is an incredibly versatile language which you can also use to build web servers, native mobile apps and desktop apps.',
+                'Prior to 2015, the last major update was ECMAScript 5.1, in 2011. However, in the recent years, JavaScript has suddenly seen a huge burst of improvements within a short span of time. In 2015, ECMAScript 2015 (previously called ECMAScript 6) was released and a ton of syntactic constructs were introduced to make writing code less unwieldy. If you are curious about it, Auth0 has written a nice article on the history of JavaScript. Till this day, not all browsers have fully implemented the ES2015 specification. Tools such as Babel enable developers to write ES2015 in their apps and Babel transpiles them down to ES5 to be compatible for browsers.',
+                'Being familiar with both ES5 and ES2015 is crucial. ES2015 is still relatively new and a lot of open source code and Node.js apps are still written in ES5. If you are doing debugging in your browser console, you might not be able to use ES2015 syntax. On the other hand, documentation and example code for many modern libraries that we will introduce later below are still written in ES2015. At Grab, we use use babel-preset-env to enjoy the productivity boost from the syntactic improvements the future of JavaScript provides and we have been loving it so far. babel-preset-env intelligently determines which Babel plugins are necessary (which new language features are not supported and have to be transpiled) as browsers increase native support for more ES language features. If you prefer using language features that are already stable, you may find that babel-preset-stage-3, which is a complete specification that will most likely be implemented in browsers, will be more suitable.',
+                'Spend a day or two revising ES5 and exploring ES2015. The more heavily used features in ES2015 include “Arrows and Lexical This”, “Classes”, “Template Strings”, “Destructuring”, “Default/Rest/Spread operators”, and “Importing and Exporting modules”.',
+            ],
+    },
+
+
+    {
+        name: 'User-Interface',
+        title: 'User Interface-React',
+        image:"./images/ui.png",
+        content:["If any JavaScript project has taken the front end ecosystem by storm in recent years, that would be React. React is a library built and open-sourced by the smart people at Facebook. In React, developers write components for their web interface and compose them together",
+                "React brings about many radical ideas and encourages developers to rethink best practices. For many years, web developers were taught that it was a good practice to write HTML, JavaScript and CSS separately. React does the exact opposite, and encourages that you write your HTML and CSS in your JavaScript instead. This sounds like a crazy idea at first, but after trying it out, it actually isn’t as weird as it sounds initially. Reason being the front end development scene is shifting towards a paradigm of component-based development. The features of React:",
+                "Declarative — You describe what you want to see in your view and not how to achieve it. In the jQuery days, developers would have to come up with a series of steps to manipulate the DOM to get from one app state to the next. In React, you simply change the state within the component and the view will update itself according to the state. It is also easy to determine how the component will look like just by looking at the markup in the render()method.",
+                "Functional — The view is a pure function of props and state. In most cases, a React component is defined by props (external parameters) and state (internal data). For the same props and state, the same view is produced. Pure functions are easy to test, and the same goes for functional components. Testing in React is made easy because a component's interfaces are well-defined and you can test the component by supplying different props and state to it and comparing the rendered output.",
+                "Maintainable — Writing your view in a component-based fashion encourages reusability. We find that defining a component’s propTypes make React code self-documenting as the reader can know clearly what is needed to use that component. Lastly, your view and logic is self-contained within the component, and should not be affected nor affect other components. That makes it easy to shift components around during large-scale refactoring, as long as the same props are supplied to the component.",
+                "High Performance — You might have heard that React uses a virtual DOM (not to be confused with shadow DOM) and it re-renders everything when there is a change in state. Why is there a need for a virtual DOM? While modern JavaScript engines are fast, reading from and writing to the DOM is slow. React keeps a lightweight virtual representation of the DOM in memory. Re-rendering everything is a misleading term. In React it actually refers to re-rendering the in-memory representation of the DOM, not the actual DOM itself. When there’s a change in the underlying data of the component, a new virtual representation is created, and compared against the previous representation. The difference (minimal set of changes required) is then patched to the real browser DOM.",
+                "Ease of Learning — Learning React is pretty simple. The React API surface is relatively small compared to this; there are only a few APIs to learn and they do not change often. The React community is one of the largest, and along with that comes a vibrant ecosystem of tools, open-sourced UI components, and a ton of great resources online to get you started on learning React.",
+                "Developer Experience — There are a number of tools that improves the development experience with React. React Developer Tools is a browser extension that allows you to inspect your component, view and manipulate its props and state. Hot reloading with webpack allows you to view changes to your code in your browser, without you having to refresh the browser. Front end development involves a lot of tweaking code, saving and then refreshing the browser. Hot reloading helps you by eliminating the last step. When there are library updates, Facebook provides codemod scripts to help you migrate your code to the new APIs. This makes the upgrading process relatively pain-free. Kudos to the Facebook team for their dedication in making the development experience with React great.",
+    ],
+    },
+];
+
+export default articles;
