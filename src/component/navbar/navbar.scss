@@ -1,0 +1,31 @@
+.navbar{
+    height: 60px;
+    width: 100%;
+    background-color:rgb(7, 95, 117);
+    
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        
+         
+        
+        
+          .list-item {
+            
+            
+            font: size 15px;
+            margin:20px;
+            font-weight: 500;
+
+            .link{
+                color: #fff;
+                text-decoration: none;
+            }
+
+
+        }
+    }
+
+}
